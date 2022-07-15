@@ -19,10 +19,15 @@ public class MainController {
 	@Autowired
 	private UniversityRepository repo;
 	
-	@GetMapping
+	@GetMapping("/home")
 	public String home(Model model) {
 		List<University> uniList = (List<University>) repo.findAll();
 		model.addAttribute("uniList", uniList);
 		return "home";
+	}
+	
+	@GetMapping
+	public String mainpage() {
+		return "mainpage";
 	}
 }

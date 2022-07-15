@@ -77,11 +77,11 @@ public class University {
 		this.website = website;
 	}
 
-	public String getHead_of_department() {
+	public String getHeadOfDepartment() {
 		return headOfDepartment;
 	}
 
-	public void setHead_of_department(String headOfDepartment) {
+	public void setHeadOfDepartment(String headOfDepartment) {
 		this.headOfDepartment = headOfDepartment;
 	}
 	

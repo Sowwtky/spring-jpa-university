@@ -1,15 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <th:block th:replace="fragments :: risorse-head"></th:block>
     <title>University</title>
   </head>
   <body>
-    <h1>Benvenuto nel database della nostra Universitá, ecco la lista dei dipartimenti:</h1>
-    <ul>
-    	<li th:each="dep : ${uniList}" th:text="${dep.getName()}"></li>
-    </ul>
+  	
+	<th:block th:insert="fragments :: navbar"></th:block>
+	
+	<div class="container">
+	
+		<h1>Benvenuto nel database della nostra Universitá, ecco la lista dei dipartimenti:</h1>
+		<hr/>
+		<table class="table">
+			<thead>
+				<tr>
+				
+					<th>Nome</th>
+					<th>Indirizzo</th>
+					<th>Telefono</th>
+					<th>Email</th>
+					<th>Sito</th>
+					<th>Direttore</th>
+				
+				</tr>
+			</thead>
+		
+			<tbody>
+			
+				<tr th:each="dep : ${uniList}">
+					<td th:text="${dep.getName()}"></td>
+					<td th:text="${dep.getAddress()}"></td>
+					<td th:text="${dep.getPhone()}"></td>
+					<td th:text="${dep.getEmail()}"></td>
+					<td th:text="${dep.getWebsite()}"></td>
+					<td th:text="${dep.getHeadOfDepartment()}"></td>
+				</tr>
+			
+			</tbody>
+			
+		</table>
+	</div>
+
   </body>
 </html>
