@@ -31,7 +31,7 @@ public class University {
 	private String headOfDepartment;
 
 	@OneToMany 
-	@JoinColumn (name = "id")
+	@JoinColumn (name = "department_id")
 	private List<Degree> degrees;
 	
 	//getter and setter

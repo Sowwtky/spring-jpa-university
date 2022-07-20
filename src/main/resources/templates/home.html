@@ -29,7 +29,9 @@
 			<tbody>
 			
 				<tr th:each="dep : ${uniList}">
-					<td th:text="${dep.getName()}"></td>
+					<td> 
+						<a th:href="@{|/detail/${dep.id}|}" th:text="${dep.getName()}"></a>
+					</td>
 					<td th:text="${dep.getAddress()}"></td>
 					<td th:text="${dep.getPhone()}"></td>
 					<td th:text="${dep.getEmail()}"></td>

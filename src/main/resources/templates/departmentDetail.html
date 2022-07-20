@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+  	 <th:block th:replace="fragments :: risorse-head"></th:block>
+     <title>Department detail</title>
+  </head>
+  <body>
+   <th:block th:insert="fragments :: navbar"></th:block>
+  	<h1 th:text="${department.name}"></h1>
+  	<h2>Corsi di Laurea:</h2>
+  	<ul>
+		<li th:each="dep : ${department.degrees}" th:text="${dep.name}"></li>
+	</ul>
+  </body>
+</html>
