@@ -10,33 +10,33 @@
 	
 	<div class="container">
 	
-		<h1>Dipartimenti:</h1>
+		<h1>Insegnanti:</h1>
 		<hr/>
 		<table class="table">
 			<thead>
 				<tr>
 				
 					<th>Nome</th>
-					<th>Indirizzo</th>
+					<th>Cognome</th>
 					<th>Telefono</th>
 					<th>Email</th>
-					<th>Sito</th>
-					<th>Direttore</th>
+					<th>Indirizzo ufficio</th>
+					<th>Numero ufficio</th>
 				
 				</tr>
 			</thead>
 		
 			<tbody>
 			
-				<tr th:each="dep : ${uniList}">
+				<tr th:each="t : ${teacherList}">
+					<td th:text="${t.getName()}"></td>
 					<td> 
-						<a th:href="@{|/detail/${dep.id}|}" th:text="${dep.getName()}"></a>
+						<a th:href="@{|/teachers/${t.id}|}" th:text="${t.getSurname()}"></a>
 					</td>
-					<td th:text="${dep.getAddress()}"></td>
-					<td th:text="${dep.getPhone()}"></td>
-					<td th:text="${dep.getEmail()}"></td>
-					<td th:text="${dep.getWebsite()}"></td>
-					<td th:text="${dep.getHeadOfDepartment()}"></td>
+					<td th:text="${t.getPhone()}"></td>
+					<td th:text="${t.getEmail()}"></td>
+					<td th:text="${t.getOfficeAddress()}"></td>
+					<td th:text="${t.getOfficeNumber}"></td>
 				</tr>
 			
 			</tbody>
@@ -45,4 +45,3 @@
 	</div>
 
   </body>
-</html>

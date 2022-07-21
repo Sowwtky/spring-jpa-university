@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <th:block th:replace="fragments :: risorse-head"></th:block>
+    <title>University</title>
+  </head>
+  <body>
+  	
+	<th:block th:insert="fragments :: navbar"></th:block>
+	
+	<div class="container">
+	
+		<h1>Corsi:</h1>
+		<hr/>
+		<table class="table">
+			<thead>
+				<tr>
+				
+					<th>Nome</th>
+					<th>Descrizione</th>
+					<th>Periodo</th>
+					<th>Anno</th>
+					<th>CFU</th>
+					<th>Sito web</th>
+				
+				</tr>
+			</thead>
+		
+			<tbody>
+			
+				<tr th:each="c : ${coursesList}">
+					<td th:text="${c.getName()}"></td>
+					<td th:text="${c.getDescription()}"></td>
+					<td th:text="${c.getPeriod()}"></td>
+					<td th:text="${c.getYear()}"></td>
+					<td th:text="${c.getCfu()}"></td>
+					<td th:text="${c.getWebsite()}"></td>
+				</tr>
+			
+			</tbody>
+			
+		</table>
+	</div>
+
+  </body>

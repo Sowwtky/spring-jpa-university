@@ -6,12 +6,10 @@
   </head>
   <body>
    <th:block th:insert="fragments :: navbar"></th:block>
-  	<h1 th:text="${department.name}" class= "text-center"></h1>
-  	<h2 class="text-center">Corsi di Laurea:</h2>
-  	<div class="col-4 m-auto text-center">
-	  	<ul>
-			<li th:each="dep : ${department.degrees}" th:text="${dep.name}"></li>
-		</ul>
-  	</div>
+  	<h1 th:text="${teacher.surname}"></h1>
+  	<h2>Corsi di Laurea:</h2>
+  	<ul>
+		<li th:each="tc : ${teacher.courses}" th:text="${tc.name}"></li>
+	</ul>
   </body>
 </html>
